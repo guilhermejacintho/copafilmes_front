@@ -1,13 +1,12 @@
 .cell-text {
     text-align: center;
+    vertical-align: middle;
     margin-top: 10px;
-    display: inline-block;
-    margin: auto;
+    margin: 3px;
     border: 2px;
+    border-radius: 15px;
     border-color: black;
     border-style: solid;
-    width: 200px;
-    height: 80px;
 }
 
 .title-text {
@@ -29,7 +28,7 @@
 
 .title-box {
     margin-top: 10px;
-    border: 2px;
+    border: 1px;
     border-color: black;
     border-style: solid;
     width: auto;
@@ -37,5 +36,15 @@
     text-align: center;
     display: block;
     margin: auto;
-    background-color: plum;
+}
+
+.select-text {
+    margin:0 px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.linha-selec{
+    margin:5px;
 }

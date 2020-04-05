@@ -26,8 +26,11 @@ export class SelectMoviesComponent implements OnInit {
         this.dataControl.setListaFilmes(resp);
         this.listaFilmes = this.dataControl.getListaFilmes();
         console.log('consulta lista filmes..');
+        (err) => alert('Ocorreu um erro ao buscar as informações.');
       });
     }
+
+    this.quantidadeSelecionados = this.listaFilmes.filter(function (el) { return el.selected == true; }).length;
 
   }
 
@@ -37,15 +40,20 @@ export class SelectMoviesComponent implements OnInit {
     filme.selected = !filme.selected;
 
     this.quantidadeSelecionados = this.listaFilmes.filter(function (el) { return el.selected == true; }).length;
-
-    if (this.quantidadeSelecionados == 8) this.executaCopa();
-
   }
 
   executaCopa() {
     if (this.quantidadeSelecionados != 8) return;
     this.dataControl.setListaSelecionado(this.listaFilmes.filter(function (el) { return el.selected == true; }));
-    this.router.navigateByUrl('/winners', { state: { movies: this.dataControl.getListaSelecionado() } });
+
+    this.apiService.execCopa(this.dataControl.getListaSelecionado()).subscribe((resp) => {
+      this.dataControl.setListaCampeoes(resp);
+
+      this.router.navigateByUrl('/winners', { state: { movies: this.dataControl.getListaCampeoes() } });
+
+      (err) => alert('Ocorreu um erro ao processar a copa.');
+    })
+
   }
 
 }

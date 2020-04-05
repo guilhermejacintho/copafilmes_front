@@ -1,1 +1,26 @@
-<p>show-winners works!</p>
+<div class="row title-box">
+    <div class="col title-text">
+        Resultado Final
+    </div>
+    <div class="col def-text ">
+        <p>Veja o resultado final do Campeonato de filmes de forma simples e rápida.</p>
+    </div>
+</div>
+
+<div class="row linha-selec">
+    <div class="col"><button type="button" class="btn btn-success" style="float: right;"
+            (click)="jogarNovamente()">Jogar Novamente</button>
+    </div>
+</div>
+
+<div class="container">
+    <div *ngFor="let filme of listaCampeoes" class="row justify-content-center">
+        <div [ngClass]="filme==listaCampeoes[0] ? 'cell-text-campeao' : 'cell-text-vice'">
+            <h3 *ngIf="filme==listaCampeoes[0]">Campeão</h3>
+            <h3 *ngIf="filme!=listaCampeoes[0]">Vice</h3>
+            <hr />
+            <p>{{filme.titulo}}</p>
+            <p>{{filme.ano}}</p>
+        </div>
+    </div>
+</div>

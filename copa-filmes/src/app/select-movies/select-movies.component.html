@@ -8,25 +8,21 @@
     </div>
 </div>
 
-<div class="row">
-    <mat-grid-list cols="2">
-        <mat-grid-tile>
-            <p>Selecionados {{quantidadeSelecionados}} de 8 filmes</p>
-        </mat-grid-tile>
-        <mat-grid-tile><button>Gerar Meu Campeonato</button></mat-grid-tile>
-    </mat-grid-list>
+<div class="row linha-selec">
+    <div class="col">
+        <p class="select-text">Selecionados {{quantidadeSelecionados}} de 8 filmes</p>
+    </div>
+    <div class="col"><button type="button" class="btn btn-primary" style="float: right;" (click)="executaCopa()">Gerar
+            Meu Campeonato</button>
+    </div>
 </div>
 
 <div class="row">
-    <mat-grid-list cols="4" rowHeight="100px">
-        <ng-container>
-            <mat-grid-tile *ngFor="let filme of listaFilmes" (click)="onMovieClick(filme)">
-                <div class="col-lg-4 cell-text"
-                    [ngStyle]="{'background-color': (filme.selected==true) ? '#ff5555' : 'white'}">
-                    <p>{{filme.titulo}}</p>
-                    <p>{{filme.ano}}</p>
-                </div>
-            </mat-grid-tile>
-        </ng-container>
-    </mat-grid-list>
+    <div *ngFor="let filme of listaFilmes" class="col-3">
+        <div class="cell-text" (click)="onMovieClick(filme)"
+            [ngStyle]="{'background-color': (filme.selected==true) ? '#88ffff' : 'white'}">
+            <p>{{filme.titulo}}</p>
+            <p>{{filme.ano}}</p>
+        </div>
+    </div>
 </div>

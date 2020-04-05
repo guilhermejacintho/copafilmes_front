@@ -25,6 +25,12 @@ export class ApiServiceService {
     return of(new Array<Movie>());
   }
 
+  public execCopa(participantes: Array<Movie>): Observable<Array<Movie>> {
+    let ret = this.http.post(`${environment.API_COPA}`, participantes, this.httpOptions).pipe(map((response: Array<Movie>) => { return response; }), catchError(this.handleError<Array<Movie>>()));
+    if (ret) return ret;
+    return of(new Array<Movie>());
+  }
+
   private handleError<T>(result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

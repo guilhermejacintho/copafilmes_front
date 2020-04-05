@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API_FILMES: "/api/filmes/",
-  API_COPA: ""
+  API_COPA: "/api/copa/"
 };
 
 /*

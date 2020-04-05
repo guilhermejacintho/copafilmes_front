@@ -1,7 +1,7 @@
 .container-text {
     text-align: center;
+    vertical-align: middle;
     margin-top: 20px;
-    margin: auto;
     font-size: 35px;
     font-style: italic;
     height: 50px;
