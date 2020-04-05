@@ -1,0 +1,32 @@
+<div class="row title-box">
+    <div class="col title-text">
+        Fase de Seleção
+    </div>
+    <div class="col def-text ">
+        <p>Selecione 8 filmes que você deseja que entrem na competição e depois pressione o botão 'Gerar Meu Campeonato'
+            para prosseguir.</p>
+    </div>
+</div>
+
+<div class="row">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <p>Selecionados {{quantidadeSelecionados}} de 8 filmes</p>
+        </mat-grid-tile>
+        <mat-grid-tile><button>Gerar Meu Campeonato</button></mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div class="row">
+    <mat-grid-list cols="4" rowHeight="100px">
+        <ng-container>
+            <mat-grid-tile *ngFor="let filme of listaFilmes" (click)="onMovieClick(filme)">
+                <div class="col-lg-4 cell-text"
+                    [ngStyle]="{'background-color': (filme.selected==true) ? '#ff5555' : 'white'}">
+                    <p>{{filme.titulo}}</p>
+                    <p>{{filme.ano}}</p>
+                </div>
+            </mat-grid-tile>
+        </ng-container>
+    </mat-grid-list>
+</div>

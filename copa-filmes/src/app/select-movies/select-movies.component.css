@@ -1,0 +1,41 @@
+.cell-text {
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    margin: auto;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    width: 200px;
+    height: 80px;
+}
+
+.title-text {
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    font-size: 25px;
+    color: seagreen;
+}
+
+.def-text {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+    font-size: 15px;
+}
+
+.title-box {
+    margin-top: 10px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    width: auto;
+    height: 80px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: plum;
+}
