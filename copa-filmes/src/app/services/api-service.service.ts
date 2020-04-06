@@ -16,7 +16,8 @@ export class ApiServiceService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Accept': '*/*'
+      'Accept': '*/*',
+      'Access-Control-Allow-Origin': 'http://localhost:5051'
     })
   };
 
